@@ -6,9 +6,38 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Welcome to Xamarin.Forms! ---- by Michi"
+               TextColor="Red"
+               HorizontalTextAlignment="Center"
+               FontSize="20"/>
+        <!-- TextBox -->
+        <Entry Placeholder="Vorname eingeben:"/>
+        <Entry Placeholder="Passwort" IsPassword="True"/>
+        <Entry Placeholder="Zahlen bitte..." Keyboard="Numeric"/>
+        <!-- Multiline-Textbox -->
+        <Editor HeightRequest="200" />
+        <Button Text="Klick mich" Clicked="Button_Clicked" />
+        <!-- CheckBox -->
+        <Switch IsToggled="True"/>
+        <Slider Minimum="0" Maximum="100" Value="10"/>
+        <ProgressBar Progress="0.333"/>
+        <Stepper Minimum="0" Maximum="10" Increment="2"/>
+
+        <!-- Combobox -->
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+                <x:String>Orange</x:String>
+            </Picker.Items>
+        </Picker>
+        <DatePicker/>
+        <TimePicker/>
+
+        <BoxView BackgroundColor="LavenderBlush"/>
+        
+        
     </StackLayout>
 
 </ContentPage>
