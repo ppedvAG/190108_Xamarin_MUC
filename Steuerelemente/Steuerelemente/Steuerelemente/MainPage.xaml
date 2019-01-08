@@ -3,12 +3,89 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Steuerelemente"
              x:Class="Steuerelemente.MainPage">
+    <ContentPage.Resources>
+        <!-- ResourceDictionary muss man selbst erstellen-->
+        <ResourceDictionary>
+            <x:Double x:Key="defaultSize">12</x:Double>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <!-- Expliziter Style -->
+            <Style TargetType="Button" x:Key="coolerButtonStyle">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="BackgroundColor" Value="Blue"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="BorderRadius" Value="10"/>
+            </Style>
+
+            <!-- Impliziter Style -->
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="Pink"/>
+                <Setter Property="BackgroundColor" Value="LightGreen"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="50"/>
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--<StackLayout BackgroundColor="LightGray"
+                 Spacing="25">
+        <Label Text="Welcome to Xamarin.Forms!"
+               TextColor="Black"/>
+        <Button Text="Klick mich"/>
+        <Button Text="Klick mich"/>
+        <Button Text="Klick mich"/>
+        <Button Text="Klick mich"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Vorname:"/>
+            <Entry Placeholder="Michi" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>-->
+
+    <!--<Grid ColumnSpacing="0" RowSpacing="0">
+        <BoxView Grid.Row="0" BackgroundColor="LightGoldenrodYellow"/>
+        <BoxView Grid.Row="3"  Grid.RowSpan="2" BackgroundColor="Thistle"/>
+        <BoxView Grid.Column="2" BackgroundColor="SaddleBrown"/>
+    </Grid>-->
+    <Grid Padding="40">
+        <Grid.Resources>
+            <!-- ResourceDictionary muss man selbst erstellen-->
+            <ResourceDictionary>
+                <x:Double x:Key="defaultSize">44</x:Double>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" FontSize="20" Text="1234"/>
+        <Button Grid.Row="1" Grid.Column="0" Text="1" TextColor="Black" BackgroundColor="Orange" BorderRadius="30" FontSize="{StaticResource defaultSize}"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" TextColor="Black" BackgroundColor="Orange" BorderRadius="30" FontSize="{StaticResource defaultSize}"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" TextColor="Black" BackgroundColor="Orange" BorderRadius="30" FontSize="{StaticResource defaultSize}">
+            <Button.Resources>
+                <!-- ResourceDictionary muss man selbst erstellen-->
+                <ResourceDictionary>
+                    <x:Double x:Key="defaultSize">15</x:Double>
+                </ResourceDictionary>
+            </Button.Resources>
+        </Button>
+
+        <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource coolerButtonStyle}" BackgroundColor="Green"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource coolerButtonStyle}"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{StaticResource coolerButtonStyle}"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Text="7" />
+        <Button Grid.Row="3" Grid.Column="1" Text="8" />
+        <Button Grid.Row="3" Grid.Column="2" Text="9" />
+
+        <Button Grid.Row="4" Grid.Column="1" Text="0"  BorderRadius="30"/>
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="DIAL" TextColor="Black" BackgroundColor="DarkGreen" BorderRadius="30"/>
+
+    </Grid>
 
 </ContentPage>
