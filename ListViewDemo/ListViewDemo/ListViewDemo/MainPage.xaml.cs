@@ -12,6 +12,12 @@ namespace ListViewDemo
         public MainPage()
         {
             InitializeComponent();
+
+            //UriImageSource s =  (UriImageSource)ImageSource.FromUri(new Uri("http://asdsadsadd.jpg"));
+            //s.CacheValidity = TimeSpan.FromMinutes(5);
+
+            // Projektname.Ordnername.Dateiname.Extension
+            // imageBild.Source = ImageSource.FromResource("ListViewDemo.Images.katze.jpg");
         }
 
         //private List<PersonenGruppe> data;
