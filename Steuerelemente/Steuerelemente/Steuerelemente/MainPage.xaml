@@ -47,9 +47,11 @@
         <BoxView Grid.Row="3"  Grid.RowSpan="2" BackgroundColor="Thistle"/>
         <BoxView Grid.Column="2" BackgroundColor="SaddleBrown"/>
     </Grid>-->
-    <Grid Padding="40">
+    <!--<Grid Padding="40">
         <Grid.Resources>
-            <!-- ResourceDictionary muss man selbst erstellen-->
+            -->
+    <!-- ResourceDictionary muss man selbst erstellen-->
+    <!--
             <ResourceDictionary>
                 <x:Double x:Key="defaultSize">44</x:Double>
             </ResourceDictionary>
@@ -68,7 +70,9 @@
         <Button Grid.Row="1" Grid.Column="1" Text="2" TextColor="Black" BackgroundColor="Orange" BorderRadius="30" FontSize="{StaticResource defaultSize}"/>
         <Button Grid.Row="1" Grid.Column="2" Text="3" TextColor="Black" BackgroundColor="Orange" BorderRadius="30" FontSize="{StaticResource defaultSize}">
             <Button.Resources>
-                <!-- ResourceDictionary muss man selbst erstellen-->
+                -->
+    <!-- ResourceDictionary muss man selbst erstellen-->
+    <!--
                 <ResourceDictionary>
                     <x:Double x:Key="defaultSize">15</x:Double>
                 </ResourceDictionary>
@@ -86,6 +90,47 @@
         <Button Grid.Row="4" Grid.Column="1" Text="0"  BorderRadius="30"/>
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="DIAL" TextColor="Black" BackgroundColor="DarkGreen" BorderRadius="30"/>
 
-    </Grid>
+    </Grid>-->
+
+    <!-- AbsoluteLayout.LayoutBounds="x,y,height,width" -->
+    <!-- Proportional: AbsoluteLayout.Layoutflags-->
+    
+    <!--<AbsoluteLayout BackgroundColor="MediumAquamarine">
+        <BoxView BackgroundColor="OliveDrab" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.333"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView BackgroundColor="Moccasin" AbsoluteLayout.LayoutBounds="50,50,100,100"/>
+        <BoxView BackgroundColor="SlateBlue" AbsoluteLayout.LayoutBounds="75,75,100,100"/>
+
+        <BoxView BackgroundColor="GhostWhite"
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.667"
+                 AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>-->
+
+    <RelativeLayout BackgroundColor="LightSalmon">
+        <BoxView x:Name="boxViewHeader"
+                 BackgroundColor="SlateGray"
+                 HeightRequest="200"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                 Type=RelativeToParent,
+                 Property=Width}"/>
+
+        <BoxView BackgroundColor="LightSeaGreen"
+                 HeightRequest="100"
+                 WidthRequest="100"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                 Type=RelativeToView,
+                 ElementName=boxViewHeader,
+                 Property=Height,
+                 Constant=-50}"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                 Type=RelativeToView,
+                 ElementName=boxViewHeader,
+                 Property=Width,
+                 Factor=0.5,
+                 Constant=-50}"/>
+    </RelativeLayout>
+
 
 </ContentPage>
