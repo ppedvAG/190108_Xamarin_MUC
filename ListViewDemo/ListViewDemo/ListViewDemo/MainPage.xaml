@@ -4,11 +4,54 @@
              xmlns:local="clr-namespace:ListViewDemo"
              x:Class="ListViewDemo.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!--<StackLayout Padding="20">
+        <Button Text="Daten laden" Clicked="Button_Clicked"/>
+        <SearchBar x:Name="searchBarVorname" Placeholder="nach Vorname suchen.."
+                   TextChanged="SearchBarVorname_TextChanged"/>
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing"
+                  IsGroupingEnabled="True"
+                  GroupDisplayBinding="{Binding Titel}"
+                  GroupShortNameBinding="{Binding Kurztitel}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}">
+
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Info"/>
+                            --><!-- IsDestructive: Nur für das Design des Löschbuttons notwendig --><!--
+                            <MenuItem Text="Löschen" IsDestructive="True" />
+                        </TextCell.ContextActions>
+
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>-->
+
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Einstellungen">
+                <TextCell Text="Meine Einstellungen" Detail="Untertitel..."/>
+                <!-- ImageCell Text="Tom Ate" Detail="Online" ImageSource="https://www.thesprucepets.com/thmb/ge_ZS3DrLEhSD-RbG9jwScNNUw0=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/a0047-000145-56a2bce25f9b58b7d0cdf7cf.jpg"/-->
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+                <SwitchCell Text="Notification" On="True"/>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Datum:"/>
+                        <DatePicker HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="Advanced">
+                <TextCell Text="Meine Einstellungen" Detail="Untertitel..."/>
+                <!-- ImageCell Text="Tom Ate" Detail="Online" ImageSource="https://www.thesprucepets.com/thmb/ge_ZS3DrLEhSD-RbG9jwScNNUw0=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/a0047-000145-56a2bce25f9b58b7d0cdf7cf.jpg"/-->
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 
 </ContentPage>
