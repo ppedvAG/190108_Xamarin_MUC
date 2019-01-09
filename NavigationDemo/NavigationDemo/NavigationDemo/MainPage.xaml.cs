@@ -13,5 +13,15 @@ namespace NavigationDemo
         {
             InitializeComponent();
         }
+
+        private void ButtonSeite2Modal_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Seite2Page());
+        }
+
+        private void ButtonSeite2_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Seite2Page());
+        }
     }
 }
