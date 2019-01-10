@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedMosquitoView.Views.WebCamPage"
+             Title="Dein Platz an der Sonne:">
+
+    <StackLayout>
+        <WebView x:Name="webViewWebcam" VerticalOptions="FillAndExpand"/>
+        <Button Text="Location in Maps anzeigen" Clicked="Button_Clicked"/>
+        <Button x:Name="buttonKamera" Text="Foto machen" Clicked="ButtonKamera_Clicked"/>
+    </StackLayout>
+
+
+</ContentPage>

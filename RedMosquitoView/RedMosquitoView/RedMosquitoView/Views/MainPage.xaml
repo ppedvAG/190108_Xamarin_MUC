@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RedMosquitoView"
+             xmlns:vm="clr-namespace:RedMosquitoView.ViewModels"
+             x:Class="RedMosquitoView.MainPage"
+             Title="Liste aller Webcams">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout Padding="10">
+        <ListView ItemsSource="{Binding WebCamList}" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Type}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
